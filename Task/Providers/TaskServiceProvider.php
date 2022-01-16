@@ -2,12 +2,11 @@
 
 namespace Task\Providers;
 
+use App\Models\User;
 use Illuminate\Routing\Events\RouteMatched;
-use Illuminate\Support\ServiceProvider;
-
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
+use Illuminate\Support\ServiceProvider;
+use Task\Models\Task;
 
 class TaskServiceProvider extends ServiceProvider
 {
@@ -18,10 +17,11 @@ class TaskServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        Event::listen(RouteMatched::class , function (RouteMatched $event){
-            Str::is('tasks.*' , $event->route->getName()) &&
-            !auth()->check() &&
-            redirect()->guest('login')->throwResponse();
+        \Task\Middlewares\Authentication::Install();
+        \Task\Middlewares\PreventTooManyTasks::install();
+
+
+
         User::resolveRelationUsing('tasks' , function () {
             return $this->hasMany(Task::class);
         });

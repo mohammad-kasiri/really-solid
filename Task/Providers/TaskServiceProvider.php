@@ -22,6 +22,8 @@ class TaskServiceProvider extends ServiceProvider
             Str::is('tasks.*' , $event->route->getName()) &&
             !auth()->check() &&
             redirect()->guest('login')->throwResponse();
+        User::resolveRelationUsing('tasks' , function () {
+            return $this->hasMany(Task::class);
         });
 
         Route::middleware('web')->group(base_path('Task/routes/routes.php'));

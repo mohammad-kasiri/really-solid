@@ -12,8 +12,8 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->string('title' , 30);
             $table->string('description' , 500);
-            $table->string('state' , 20);
-            $table->dateTime('expire_at');
+//            $table->string('state' , 20);
+//            $table->dateTime('expire_at');
             $table->timestamps();
         });
     }

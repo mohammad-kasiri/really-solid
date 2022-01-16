@@ -2,6 +2,8 @@
 
 namespace Task\Controllers;
 
+use Task\Database\TaskStore;
+
 class TaskController
 {
     public function index()
@@ -13,8 +15,11 @@ class TaskController
     {
 
     }
-    public function sotre(){
-
+    public function sotre()
+    {
+        $data = request()->only(['name' , 'description']);
+        $task = TaskStore::store($data  , auth()->id());
+        return redirect()->route('tasks.index')->with(['success' => 'Task Created !']);
     }
 
     public function edit()

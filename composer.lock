@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c61ff82cbf0142a401a48a8161e1595a",
+    "content-hash": "66bb05a5c23da20a89ef5d96e2f21774",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -960,6 +960,68 @@
             "time": "2021-10-06T17:43:30+00:00"
         },
         {
+            "name": "imanghafoori/laravel-temp-tag",
+            "version": "v1.2.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imanghafoori1/laravel-temp-tag.git",
+                "reference": "e2aa84a7b882b5372d5e834a56735435280a7e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imanghafoori1/laravel-temp-tag/zipball/e2aa84a7b882b5372d5e834a56735435280a7e4d",
+                "reference": "e2aa84a7b882b5372d5e834a56735435280a7e4d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/events": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0",
+                "php": "^7.1.3|8.*"
+            },
+            "require-dev": {
+                "doctrine/dbal": "*",
+                "mockery/mockery": "^1.0",
+                "orchestra/database": "^3.5|^4.0|^5.0",
+                "orchestra/testbench": "^3.5|^4.0|^5.0",
+                "phpunit/phpunit": "^7.5|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Imanghafoori\\Tags\\TempTagServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Imanghafoori\\Tags\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iman Ghafoori",
+                    "email": "imanghafoori1@gmail.com",
+                    "homepage": "https://github.com/imanghafoori1",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Temporary Tag simplify tagging Eloquent models.",
+            "support": {
+                "issues": "https://github.com/imanghafoori1/laravel-temp-tag/issues",
+                "source": "https://github.com/imanghafoori1/laravel-temp-tag/tree/v1.2.13"
+            },
+            "time": "2021-09-04T01:40:01+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.79.0",
             "source": {
@@ -1322,6 +1384,67 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.7.0"
             },
             "time": "2022-01-10T08:52:49+00:00"
+        },
+        {
+            "name": "laravel/ui",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/9a1e52442dd238647905b98d773d59e438eb9f9d",
+                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^8.42|^9.0",
+                "illuminate/filesystem": "^8.42|^9.0",
+                "illuminate/support": "^8.42|^9.0",
+                "illuminate/validation": "^8.42|^9.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Ui\\": "src/",
+                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel UI utilities and presets.",
+            "keywords": [
+                "laravel",
+                "ui"
+            ],
+            "support": {
+                "source": "https://github.com/laravel/ui/tree/v3.4.1"
+            },
+            "time": "2021-12-22T10:40:50+00:00"
         },
         {
             "name": "league/commonmark",

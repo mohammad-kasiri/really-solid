@@ -11,7 +11,7 @@
         "imanghafoori/laravel-temp-tag": "^1.2",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4"
     },
     "require-dev": {
@@ -25,6 +25,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Task\\": "task/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

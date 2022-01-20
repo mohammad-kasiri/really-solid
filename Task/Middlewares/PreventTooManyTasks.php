@@ -13,11 +13,7 @@ class PreventTooManyTasks
         HeyMan::onRoute('tasks.store')
             ->thisMethodShouldAllow([static::class , 'exceedsAffordableTasks'])
             ->otherwise()
-            ->weRespondFrom([static::class , 'response']);
-    }
-
-    public static function exceedsAffordableTasks(){
-        return  TaskStore::countTask( auth()->id() ) < config('task.maximum_daily_task');
+            ->weRespondFrom([static::class, 'response']);
     }
 
     public static function response()
@@ -25,5 +21,9 @@ class PreventTooManyTasks
         return redirect()
             ->route('tasks.index')
             ->with(['error' , 'you can not create too many daily tasks']);
+    }
+
+    public static function exceedsAffordableTasks(){
+        return  TaskStore::countTask( auth()->id() ) < config('task.maximum_daily_task');
     }
 }

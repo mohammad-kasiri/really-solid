@@ -17,17 +17,20 @@ class TaskServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        \Task\Middlewares\Authentication::Install();
-        \Task\Middlewares\PreventTooManyTasks::install();
+       \Task\Middlewares\Authentication::Install();
+       \Task\Middlewares\PreventTooManyTasks::install();
+       \Task\Middlewares\Validation::install();
 
 
 
-        User::resolveRelationUsing('tasks' , function () {
-            return $this->hasMany(Task::class);
+        User::resolveRelationUsing('tasks' , function ($user) {
+            return $user->hasMany(Task::class);
         });
 
+
         Route::middleware('web')->group(base_path('Task/routes/routes.php'));
-        $this->loadMigrationsFrom([base_path('Task/migration')]);
+        $this->loadMigrationsFrom([base_path('Task\migrations')]);
         $this->loadViewsFrom(base_path('Task/views') , 'Task');
+        $this->mergeConfigFrom(base_path('Task/config/config.php') , 'task');
     }
 }

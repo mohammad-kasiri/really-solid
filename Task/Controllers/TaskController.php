@@ -15,9 +15,9 @@ class TaskController
     {
 
     }
-    public function sotre()
+    public function store()
     {
-        $data = request()->only(['name' , 'description']);
+        $data = request()->only(['title' , 'description']);
         $task = TaskStore::store($data  , auth()->id());
         return redirect()->route('tasks.index')->with(['success' => 'Task Created !']);
     }

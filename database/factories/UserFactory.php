@@ -36,4 +36,14 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function admin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'name' => 'Mohammad',
+                'email' => "mohammad.kasirey@gmail.com",
+            ];
+        });
+    }
 }
